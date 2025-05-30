@@ -1,0 +1,89 @@
+.flashcard {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: sans-serif;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  border-radius: 10px;
+}
+
+.flashcard-front {
+  background-color: #f0f0f0; /* Light grey for the front */
+  color: black;
+}
+
+.flashcard-back {
+  background-color: #007bff; /* Blue for the back */
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flashcard-back p {
+  margin: 10px;
+}
+
+.answer-buttons {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.answer-buttons button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.button-right {
+  background-color: #28a745; /* Green */
+  color: white;
+}
+
+.button-right:hover {
+  background-color: #218838; /* Darker Green */
+}
+
+.button-wrong {
+  background-color: #dc3545; /* Red */
+  color: white;
+}
+
+.button-wrong:hover {
+  background-color: #c82333; /* Darker Red */
+} 

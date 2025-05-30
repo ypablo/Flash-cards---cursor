@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HomePage: React.FC = () => {
   return (
@@ -7,10 +8,10 @@ const HomePage: React.FC = () => {
       <nav className="home-navigation">
         <ul>
           <li>
-            <a href="#/study" className="button-study">Study Mode</a>
+            <Link to="/select-category" className="button-study">Study Mode</Link>
           </li>
           <li>
-            <a href="#/quiz" className="button-quiz">Quiz Mode</a>
+            <Link to="/select-category" className="button-quiz">Quiz Mode</Link>
           </li>
           <li>
             <a href="#/stats" className="button-stats">Stats Page</a>
